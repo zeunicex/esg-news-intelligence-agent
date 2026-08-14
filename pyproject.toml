@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esg-news-intelligence-agent"
+version = "0.1.0"
+description = "Auditable ESG news classification and sentiment signals"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "ISA Project Team"}]
+keywords = ["esg", "news", "sentiment", "sustainable-investing"]
+dependencies = []
+
+[project.optional-dependencies]
+app = ["streamlit>=1.36"]
+notebook = ["jupyterlab>=4.2", "nbclient>=0.10"]
+
+[project.scripts]
+esg-news = "esg_news_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
